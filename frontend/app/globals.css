@@ -1,0 +1,56 @@
+:root {
+  --ink: #0b0d10;
+  --surface: #15181d;
+  --surface-raised: #1e2229;
+  --border: #2a2f37;
+  --text-primary: #f3f1ec;
+  --text-muted: #8a9099;
+  --accent: #ff6b4a;
+  --accent-hover: #ff8266;
+  --danger: #e5484d;
+  --danger-hover: #f0666a;
+  --live: #3dd68c;
+
+  /* System font stacks - no external font fetches, zero network dependency.
+     Display stack favors geometric/rounded system faces for a technical feel;
+     body stack favors the cleanest neutral system face on each platform. */
+  --font-display: ui-rounded, "SF Pro Rounded", "Segoe UI", system-ui, sans-serif;
+  --font-body: -apple-system, "Segoe UI", Roboto, ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--ink);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+input {
+  font-family: var(--font-body);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
